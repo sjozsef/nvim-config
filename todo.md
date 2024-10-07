@@ -1,0 +1,4 @@
+- [ ] treesitter
+- [ ] mason? 
+- [ ] fancy theme
+- [ ] easymotion

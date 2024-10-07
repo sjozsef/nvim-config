@@ -1,3 +1,4 @@
+require('config.lazy')
 -- Load mappings
 require('mappings').setup()
 
