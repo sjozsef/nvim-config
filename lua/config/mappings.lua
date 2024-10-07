@@ -27,6 +27,9 @@ M.setup = function()
     
     -- Close current split
     vim.keymap.set('n', 'q', ':close<CR>', { noremap = true, silent = true, desc = "Close current split" })
+
+    -- Reload configuration
+    vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
 end
 
 return M
