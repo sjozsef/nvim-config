@@ -14,8 +14,9 @@
     - [ ] grep af
     - [ ] symbols
 - [ ] supermaven
-- [ ] which key
+- [x] which key
 - [ ] comment nvim
 - [ ] easymotion
 - [x] clipboard
+- [ ] find all files
 
