@@ -45,7 +45,6 @@ M.setup = function()
     vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, { desc = "Show document symbols" })
     vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "Show references" })
     vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = "Show implementations" })
-    vim.keymap.set('n', 'lr', builtin.lsp_rename, { desc = "Rename symbol" })
 end
 
 return M
