@@ -3,6 +3,7 @@ vim.keymap.set('n', 'k', 'j')
 vim.keymap.set('n', 'l', 'k')
 vim.keymap.set('n', ';', 'l')
 vim.keymap.set('n', '.', ':')
+vim.keymap.set('n', ':', '.')
 
 vim.api.nvim_create_user_command('ReloadConfig', function()
     -- Unload user modules
