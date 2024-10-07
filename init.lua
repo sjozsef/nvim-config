@@ -12,5 +12,5 @@ vim.api.nvim_create_user_command('ReloadCfg', function()
         end
     end
     dofile(vim.env.MYVIMRC)
-    vim.notify('Konfiguráció újratöltve!', vim.log.levels.INFO)
+    vim.notify('Config reloaded', vim.log.levels.INFO)
 end, {})
