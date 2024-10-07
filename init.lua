@@ -6,7 +6,5 @@ vim.opt.smartcase = true
 
 require('config.lazy')
 -- Load mappings
-require('mappings').setup()
+require('config.mappings').setup()
 
--- Load commands
-require('commands.ReloadCfg').setup()

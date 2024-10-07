@@ -1,4 +1,5 @@
-- [ ] treesitter
-- [ ] mason? 
-- [ ] fancy theme
+- [x] treesitter
+- [x] mason 
+- [x] file browser
+- [x] fancy theme
 - [ ] easymotion
