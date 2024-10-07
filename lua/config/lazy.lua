@@ -26,6 +26,12 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
+    -- Add telescope.nvim and its dependencies
+    {
+      'nvim-telescope/telescope.nvim',
+      tag = '0.1.5',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
@@ -33,3 +39,6 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- Load telescope configuration
+require('config.telescope')
