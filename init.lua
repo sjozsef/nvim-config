@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+
 require('config.lazy')
 -- Load mappings
 require('mappings').setup()
