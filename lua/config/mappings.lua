@@ -42,6 +42,7 @@ M.setup = function()
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
     vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = "Go to definition" })
+    vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, { desc = "Show document symbols" })
 end
 
 return M
