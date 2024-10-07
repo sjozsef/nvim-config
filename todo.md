@@ -12,3 +12,4 @@
 - [ ] which key
 - [ ] comment nvim
 - [ ] easymotion
+- [ ] clipboard
