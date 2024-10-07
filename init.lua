@@ -5,6 +5,5 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 require('config.lazy')
--- Load mappings
 require('config.mappings').setup()
 
