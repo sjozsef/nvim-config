@@ -34,6 +34,13 @@ M.setup = function()
     -- Move splits
     vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
     vim.keymap.set('n', '<C-;>', '<C-w>l', { noremap = true, silent = true, desc = "Move split to the right" })
+
+    -- Telescope keymaps
+    local builtin = require('telescope.builtin')
+    vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
+    vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live grep" })
+    vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
+    vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
 end
 
 return M
