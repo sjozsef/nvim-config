@@ -20,6 +20,10 @@ M.setup = function()
     -- Tab navigation mappings
     vim.keymap.set('n', 'J', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', ':', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+
+    -- Window split mappings
+    vim.keymap.set('n', '<leader>wj', '<C-w>v<C-w>H', { noremap = true, silent = true, desc = "Split window left" })
+    vim.keymap.set('n', '<leader>w;;', '<C-w>v', { noremap = true, silent = true, desc = "Split window right" })
 end
 
 return M
