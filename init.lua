@@ -4,12 +4,14 @@ vim.keymap.set('n', 'l', 'k')
 vim.keymap.set('n', ';', 'l')
 
 vim.api.nvim_create_user_command('ReloadConfig', function()
+    -- Unload user modules
     for name,_ in pairs(package.loaded) do
         if name:match('^user') then
             package.loaded[name] = nil
         end
     end
-    dofile(vim.env.MYVIMRC)
+    -- Reload init.lua
+    dofile(vim.fn.stdpath('config') .. '/init.lua')
     vim.notify('Configuration reloaded', vim.log.levels.INFO)
 end, {})
 
