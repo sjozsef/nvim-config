@@ -32,8 +32,8 @@ M.setup = function()
     vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
 
     -- Move splits
-    vim.keymap.set('n', '<C-j>', '<C-w>H', { noremap = true, silent = true, desc = "Move split to the left" })
-    vim.keymap.set('n', '<C-;>', '<C-w>L', { noremap = true, silent = true, desc = "Move split to the right" })
+    vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
+    vim.keymap.set('n', '<C-;>', '<C-w>l', { noremap = true, silent = true, desc = "Move split to the right" })
 end
 
 return M
