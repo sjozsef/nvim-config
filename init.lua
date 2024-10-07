@@ -1,4 +1,5 @@
 vim.opt.termguicolors = true
+vim.opt.showmode = false
 
 require('config.lazy')
 -- Load mappings
