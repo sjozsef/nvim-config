@@ -2,4 +2,13 @@
 - [x] mason 
 - [x] file browser
 - [x] fancy theme
+- [ ] telescope
+    - [ ] find project files
+    - [ ] find all files
+    - [ ] grep pf
+    - [ ] grep af
+    - [ ] symbols
+- [ ] supermaven
+- [ ] which key
+- [ ] comment nvim
 - [ ] easymotion
