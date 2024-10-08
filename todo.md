@@ -2,11 +2,11 @@
 - [x] mason 
 - [x] file browser
 - [x] fancy theme
-- [ ] lsp
+- [x] lsp
     - [x] go to definition
     - [x] implementation
     - [x] references
-    - [ ] rename symbol
+    - [x] rename symbol
 - [ ] telescope
     - [x] find project files
     - [ ] find all files
@@ -18,4 +18,4 @@
 - [x] comment nvim
 - [ ] easymotion
 - [x] clipboard
-- [ ] blade syntax
+- [x] blade syntax
