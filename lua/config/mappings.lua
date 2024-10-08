@@ -51,6 +51,9 @@ M.setup = function()
     vim.keymap.set('n', 'Z', function()
         require('bufdelete').bufdelete(0, true)
     end, { noremap = true, silent = true, desc = "Delete current buffer" })
+
+    -- Add rename symbol functionality
+    vim.keymap.set('n', 'lr', vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename symbol" })
 end
 
 return M
