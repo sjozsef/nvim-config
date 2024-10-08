@@ -25,6 +25,8 @@ vim.opt.clipboard = "unnamedplus"
 require('config.lazy')
 require('config.mappings').setup()
 
+vim.o.guifont = "FiraCode Nerd Font Mono:h19"
+
 -- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 -- parser_config.blade = {
 --     install_info = {
