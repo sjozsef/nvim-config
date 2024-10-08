@@ -13,11 +13,15 @@ return {
             [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
         }
         dashboard.section.buttons.val = {
-            dashboard.button( "e", "  New file" , ":ene <BAR> startinsert <CR>"),
-            dashboard.button( "f", "  Find file", ":Telescope find_files<CR>"),
-            dashboard.button( "r", "  Recent"   , ":Telescope oldfiles<CR>"),
-            dashboard.button( "s", "  Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
-            dashboard.button( "q", "  Quit NVIM", ":qa<CR>"),
+            dashboard.button("1", "Libra Admin", ":cd '~/Projects/netpeople/admin.librabooks.hu'<CR>"),
+            dashboard.button("2", "Libra Ui", ":cd ~/Projects/netpeople/ui.librabooks.hu<CR>"),
+            dashboard.button("3", "UNMXR App", ":cd ~/Projects/devoid/unmxr/app<CR>"),
+            dashboard.button("4", "UNMXR Worker", ":cd ~/Projects/devoid/unmxr/base-services<CR>"),
+            dashboard.button("5", "UNMXR Audio Services", ":cd ~/Projects/unmxr/audio-services<CR>"),
+            dashboard.button("f", "Find file", ":Telescope find_files<CR>"),
+            dashboard.button("r", "Recent", ":Telescope oldfiles<CR>"),
+            dashboard.button("s", "Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+            dashboard.button("q", "Quit NVIM", ":qa<CR>"),
         }
         dashboard.section.footer.val = "Happy coding!"
 
