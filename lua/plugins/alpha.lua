@@ -13,11 +13,11 @@ return {
             [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
         }
         dashboard.section.buttons.val = {
-            dashboard.button("1", "Libra Admin", ":lua vim.cmd.cd('~/Projects/netpeople/admin.librabooks.hu')<CR>"),
-            dashboard.button("2", "Libra Ui", ":lua vim.cmd.cd('~/Projects/netpeople/ui.librabooks.hu')<CR>"),
-            dashboard.button("3", "UNMXR App", ":lua vim.cmd.cd('~/Projects/devoid/unmxr/app')<CR>"),
-            dashboard.button("4", "UNMXR Worker", ":lua vim.cmd.cd('~/Projects/devoid/unmxr/base-services')<CR>"),
-            dashboard.button("5", "UNMXR Audio Services", ":lua vim.cmd.cd('~/Projects/unmxr/audio-services')<CR>"),
+            dashboard.button("1", "Libra Admin", ":lua vim.fn.chdir(vim.fn.expand('~/Projects/netpeople/admin.librabooks.hu'))<CR>"),
+            dashboard.button("2", "Libra Ui", ":lua vim.fn.chdir(vim.fn.expand('~/Projects/netpeople/ui.librabooks.hu'))<CR>"),
+            dashboard.button("3", "UNMXR App", ":lua vim.fn.chdir(vim.fn.expand('~/Projects/devoid/unmxr/app'))<CR>"),
+            dashboard.button("4", "UNMXR Worker", ":lua vim.fn.chdir(vim.fn.expand('~/Projects/devoid/unmxr/base-services'))<CR>"),
+            dashboard.button("5", "UNMXR Audio Services", ":lua vim.fn.chdir(vim.fn.expand('~/Projects/unmxr/audio-services'))<CR>"),
             dashboard.button("f", "Find file", ":Telescope find_files<CR>"),
             dashboard.button("r", "Recent", ":Telescope oldfiles<CR>"),
             dashboard.button("s", "Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
