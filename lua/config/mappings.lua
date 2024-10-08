@@ -25,9 +25,6 @@ M.setup = function()
     vim.keymap.set('n', '<leader>wj', '<C-w>v<C-w>H', { noremap = true, silent = true, desc = "Split window left" })
     vim.keymap.set('n', '<leader>w;', '<C-w>v', { noremap = true, silent = true, desc = "Split window right" })
     
-    -- Close current split
-    vim.keymap.set('n', 'q', ':close<CR>', { noremap = true, silent = true, desc = "Close current split" })
-
     -- Reload configuration
     vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
 
