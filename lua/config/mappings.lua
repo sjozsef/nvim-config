@@ -27,8 +27,14 @@ M.setup = function()
     
     -- Reload configuration
     vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
-    -- Close current split
-    vim.keymap.set('n', 'q', ':close<CR>', { noremap = true, silent = true, desc = "Close current split" })
+    -- Close current split or quit if it's the last window
+    vim.keymap.set('n', 'q', function()
+        if vim.fn.winnr('$') == 1 then
+            vim.cmd('quit')
+        else
+            vim.cmd('close')
+        end
+    end, { noremap = true, silent = true, desc = "Close split or quit" })
 
     -- Move splits
     vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
