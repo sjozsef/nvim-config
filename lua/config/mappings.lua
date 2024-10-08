@@ -46,6 +46,11 @@ M.setup = function()
     vim.keymap.set('n', 'gf', builtin.grep_string, { desc = "Search current word" })
     vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "Commands" })
+
+    -- Delete current buffer
+    vim.keymap.set('n', 'Z', function()
+        require('bufdelete').bufdelete(0, true)
+    end, { noremap = true, silent = true, desc = "Delete current buffer" })
 end
 
 return M
