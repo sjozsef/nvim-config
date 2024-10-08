@@ -42,3 +42,7 @@ vim.filetype.add({
         [".*%.blade%.php"] = "blade", -- Recognize .blade.php files as Blade
     }
 })
+
+vim.cmd([[
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Alpha | endif
+]])
