@@ -48,30 +48,26 @@ M.setup = function()
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
 
     -- Project mappings
-    vim.keymap.set('n', '<leader>pla', function()
+    vim.keymap.set('n', 'pla', function()
         vim.fn.chdir(vim.fn.expand('~/Projects/netpeople/admin.librabooks.hu'))
-        print("Changed to Librabooks Admin project")
     end, { desc = "Go to Librabooks Admin project" })
 
-    vim.keymap.set('n', '<leader>plu', function()
+    vim.keymap.set('n', 'plu', function()
         vim.fn.chdir(vim.fn.expand('~/Projects/netpeople/ui.librabooks.hu'))
-        print("Changed to Librabooks UI project")
     end, { desc = "Go to Librabooks UI project" })
 
-    vim.keymap.set('n', '<leader>pua', function()
+    vim.keymap.set('n', 'pua', function()
         vim.fn.chdir(vim.fn.expand('~/Projects/devoid/unmxr/app'))
-        print("Changed to UNMXR App project")
     end, { desc = "Go to UNMXR App project" })
 
-    vim.keymap.set('n', '<leader>puw', function()
+    vim.keymap.set('n', 'puw', function()
         vim.fn.chdir(vim.fn.expand('~/Projects/devoid/unmxr/base-services'))
-        print("Changed to UNMXR Worker project")
     end, { desc = "Go to UNMXR Worker project" })
 
-    vim.keymap.set('n', '<leader>pus', function()
+    vim.keymap.set('n', 'pus', function()
         vim.fn.chdir(vim.fn.expand('~/Projects/unmxr/audio-services'))
-        print("Changed to UNMXR Audio Services project")
     end, { desc = "Go to UNMXR Audio Services project" })
+
     vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = "Go to definition" })
     vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, { desc = "Show document symbols" })
     vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = "Show references" })
