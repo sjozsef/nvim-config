@@ -27,6 +27,8 @@ M.setup = function()
     
     -- Reload configuration
     vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
+    -- Close current split
+    vim.keymap.set('n', 'q', ':close<CR>', { noremap = true, silent = true, desc = "Close current split" })
 
     -- Move splits
     vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
@@ -53,7 +55,7 @@ M.setup = function()
     end, { noremap = true, silent = true, desc = "Delete current buffer" })
 
     -- Add rename symbol functionality
-    vim.keymap.set('n', 'lr', vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename symbol" })
+    vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename symbol" })
 end
 
 return M

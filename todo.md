@@ -18,5 +18,4 @@
 - [x] comment nvim
 - [ ] easymotion
 - [x] clipboard
-- [ ] editorconfig
 - [ ] blade syntax
