@@ -3,20 +3,20 @@
 - [x] file browser
 - [x] fancy theme
 - [ ] lsp
-    - [ ] go to definition
-    - [ ] implementation
-    - [ ] references
+    - [x] go to definition
+    - [x] implementation
+    - [x] references
     - [ ] rename symbol
 - [ ] telescope
-    - [ ] find project files
+    - [x] find project files
     - [ ] find all files
-    - [ ] grep pf
+    - [x] grep pf
     - [ ] grep af
-    - [ ] symbols
-- [ ] supermaven
+    - [x] symbols
+- [x] supermaven
 - [x] which key
-- [ ] comment nvim
+- [x] comment nvim
 - [ ] easymotion
 - [x] clipboard
-- [ ] find all files
-
+- [ ] editorconfig
+- [ ] blade syntax

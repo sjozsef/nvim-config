@@ -1,7 +1,7 @@
 return {
   {
     "williamboman/mason.nvim",
-    build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+    build = ":MasonUpdate",
     config = function()
       require("mason").setup()
     end
@@ -41,18 +41,12 @@ return {
         };
       }
 
-      -- Add configurations for other language servers here
-      -- For example:
-      -- lspconfig.lua_ls.setup{}
-      -- lspconfig.pyright.setup{}
-
-      -- TypeScript language server setup for Vue.js
-      lspconfig.tsserver.setup{
+      lspconfig.ts_ls.setup{
         init_options = {
           plugins = {
             {
               name = "@vue/typescript-plugin",
-              location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+              location = "/Users/sjozsef/.nvm/versions/node/v22.3.0/lib/node_modules/@vue/typescript-plugin",
               languages = {"javascript", "typescript", "vue"},
             },
           },
