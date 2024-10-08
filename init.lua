@@ -43,6 +43,13 @@ vim.filetype.add({
     }
 })
 
-vim.cmd([[
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Alpha | endif
-]])
+ vim.opt.list = true
+ vim.opt.listchars = {
+     space = '·',
+     tab = '→ ',
+     eol = '↲',
+     nbsp = '␣',
+     trail = '•',
+     extends = '⟩',
+     precedes = '⟨',
+ }
