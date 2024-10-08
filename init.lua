@@ -43,13 +43,28 @@ vim.filetype.add({
     }
 })
 
- vim.opt.list = true
- vim.opt.listchars = {
-     space = '·',
-     tab = '→ ',
-     eol = '↲',
-     nbsp = '␣',
-     trail = '•',
-     extends = '⟩',
-     precedes = '⟨',
- }
+vim.opt.listchars = {
+    space = '·',
+    tab = '→ ',
+    eol = '↲',
+    nbsp = '␣',
+    trail = '•',
+    extends = '⟩',
+    precedes = '⟨',
+}
+
+-- Function to toggle whitespace display
+local function toggle_whitespace()
+    vim.opt.list = not vim.opt.list:get()
+    if vim.opt.list:get() then
+        print("Whitespace display enabled")
+    else
+        print("Whitespace display disabled")
+    end
+end
+
+-- Map the toggle function to <leader>tw
+vim.keymap.set('n', '<leader>tw', toggle_whitespace, { noremap = true, silent = true, desc = "Toggle whitespace display" })
+
+-- Set initial state (disabled by default)
+vim.opt.list = false
