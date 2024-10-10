@@ -23,10 +23,17 @@ M.setup = function()
 
     -- Window split mappings
     vim.keymap.set('n', '<leader>wj', '<C-w>v<C-w>H', { noremap = true, silent = true, desc = "Split window left" })
+    vim.keymap.set('n', '<leader>wk', '<C-w>s', { noremap = true, silent = true, desc = "Split window down" })
+    vim.keymap.set('n', '<leader>wl', '<C-w>s<C-w>K', { noremap = true, silent = true, desc = "Split window up" })
     vim.keymap.set('n', '<leader>w;', '<C-w>v', { noremap = true, silent = true, desc = "Split window right" })
-    
-    -- Reload configuration
-    vim.keymap.set('n', '<leader>sr', ':source $MYVIMRC<CR>', { noremap = true, silent = true, desc = "Reload config" })
+
+
+    -- Move splits
+    vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
+    vim.keymap.set('n', '<C-k>', '<C-w>j', { noremap = true, silent = true, desc = "Move split to the bottom" })
+    vim.keymap.set('n', '<C-l>', '<C-w>k', { noremap = true, silent = true, desc = "Move split to the right" })
+    vim.keymap.set('n', '<C-;>', '<C-w>l', { noremap = true, silent = true, desc = "Move split to the top" })
+
     -- Close current split or quit if it's the last window
     vim.keymap.set('n', 'q', function()
         if vim.fn.winnr('$') == 1 then
@@ -35,10 +42,6 @@ M.setup = function()
             vim.cmd('close')
         end
     end, { noremap = true, silent = true, desc = "Close split or quit" })
-
-    -- Move splits
-    vim.keymap.set('n', '<C-j>', '<C-w>h', { noremap = true, silent = true, desc = "Move split to the left" })
-    vim.keymap.set('n', '<C-;>', '<C-w>l', { noremap = true, silent = true, desc = "Move split to the right" })
 
     -- Telescope keymaps
     local builtin = require('telescope.builtin')
