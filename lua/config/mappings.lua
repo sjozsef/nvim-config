@@ -84,6 +84,11 @@ M.setup = function()
 
     -- Add rename symbol functionality
     vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, { noremap = true, silent = true, desc = "Rename symbol" })
+
+    -- Add mappings for leap
+    vim.keymap.set({'n', 'x', 'o'}, 'h',  '<Plug>(leap-forward)')
+    vim.keymap.set({'n', 'x', 'o'}, 'H',  '<Plug>(leap-backward)')
+    vim.keymap.set({'n', 'x', 'o'}, '<C-h>', '<Plug>(leap-from-window)')
 end
 
 return M

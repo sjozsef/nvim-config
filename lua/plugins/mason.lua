@@ -57,6 +57,17 @@ return {
           "vue",
         },
       }
+
+      lspconfig.lua_ls.setup{
+        init_options = {
+          workspace = {
+            library = {
+              vim.api.nvim_get_runtime_file("", true),
+              vim.fn.stdpath("config") .. "/lua",
+            },
+          },
+        }
+      }
     end
   }
 }

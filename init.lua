@@ -75,3 +75,23 @@ vim.keymap.set('n', '<leader>tw', toggle_whitespace, { noremap = true, silent = 
 
 -- Set initial state (disabled by default)
 vim.opt.list = false
+
+-- Do not show diagnostics by default
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
+-- Function to show diagnostics in a floating window
+local function show_line_diagnostics()
+  vim.diagnostic.open_float(nil, {
+    focusable = false,
+    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    border = 'rounded',
+    source = 'always',
+    prefix = ' ',
+    scope = 'line',
+  })
+end
+
+-- Keybinding to show diagnostics for the current line
+vim.keymap.set('n', '<leader>d', show_line_diagnostics, { noremap = true, silent = true, desc = "Show line diagnostics" })

@@ -1,5 +1,5 @@
-- [ ] try LazyGit
-- [ ] ai assistant
+- [x] try LazyGit
+- [x] ai assistant
 - [ ] Neotree instead of oil
 - [ ] find all files
 - [ ] grep all files
@@ -18,3 +18,6 @@
 - [ ] easymotion?
 - [ ] try LazyDocker?
 - [ ] try NeoTest?
+- [ ] https://github.com/folke/trouble.nvim
+- [ ] https://github.com/ggandor/leap.nvim
+
