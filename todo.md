@@ -1,9 +1,4 @@
-- [x] try LazyGit
-- [x] ai assistant
 - [ ] Neotree instead of oil
-- [ ] find all files
-- [ ] grep all files
-- [ ] .env.example is .env too
 - [ ] lualine colors
 - [ ] lsp actions
     - [ ] show diagnosis of line
@@ -11,11 +6,10 @@
         - [ ] show diagnostics of workspace
     - [ ] import stuff under the cursor
 - [ ] Formatting
-    - [ ] Never format anything automatically, except while editing (paste something or press enter)
+    - [ ] Never format anything automatically, but when i paste something, format it. Not on save, only on paste and when i type newline.
 - [ ] searchlist like stuff (e.g. for search or referecnes put all the result to a list and jump prev/next or specific item)    
 - [ ] find out how to solve the issue with the two completion plugins (both use tab)
 
-- [ ] easymotion?
 - [ ] try LazyDocker?
 - [ ] try NeoTest?
 - [ ] https://github.com/folke/trouble.nvim
