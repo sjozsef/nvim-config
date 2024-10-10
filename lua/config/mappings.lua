@@ -94,6 +94,11 @@ M.setup = function()
     vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "Commands" })
 
+    -- Code actions
+    vim.keymap.set('n', '<leader>ca', function()
+        vim.lsp.buf.code_action()
+    end, { noremap = true, silent = true, desc = "Code actions" })
+
     -- Delete current buffer
     vim.keymap.set('n', 'Z', function()
         require('bufdelete').bufdelete(0, true)
