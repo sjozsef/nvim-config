@@ -1,21 +1,20 @@
-- [x] treesitter
-- [x] mason 
-- [x] file browser
-- [x] fancy theme
-- [x] lsp
-    - [x] go to definition
-    - [x] implementation
-    - [x] references
-    - [x] rename symbol
-- [ ] telescope
-    - [x] find project files
-    - [ ] find all files
-    - [x] grep pf
-    - [ ] grep af
-    - [x] symbols
-- [x] supermaven
-- [x] which key
-- [x] comment nvim
-- [ ] easymotion
-- [x] clipboard
-- [x] blade syntax
+- [ ] try LazyGit
+- [ ] ai assistant
+- [ ] Neotree instead of oil
+- [ ] find all files
+- [ ] grep all files
+- [ ] .env.example is .env too
+- [ ] lualine colors
+- [ ] lsp actions
+    - [ ] show diagnosis of line
+        - [ ] show diagnostics of file
+        - [ ] show diagnostics of workspace
+    - [ ] import stuff under the cursor
+- [ ] Formatting
+    - [ ] Never format anything automatically, except while editing (paste something or press enter)
+- [ ] searchlist like stuff (e.g. for search or referecnes put all the result to a list and jump prev/next or specific item)    
+- [ ] find out how to solve the issue with the two completion plugins (both use tab)
+
+- [ ] easymotion?
+- [ ] try LazyDocker?
+- [ ] try NeoTest?
