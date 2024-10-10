@@ -43,6 +43,13 @@ vim.filetype.add({
     }
 })
 
+vim.filetype.add({
+   pattern = {
+     ['.env'] = 'sh',
+     ['.env%..*'] = 'sh',
+   }
+ })
+
 vim.opt.listchars = {
     space = '·',
     tab = '→ ',

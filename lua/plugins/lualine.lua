@@ -4,7 +4,7 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'tokyonight',
+        -- theme = 'github_dark',
         component_separators = '|',
         section_separators = { left = '', right = '' },
       },
