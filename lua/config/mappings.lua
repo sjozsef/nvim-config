@@ -94,6 +94,10 @@ M.setup = function()
     vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "Commands" })
 
+    -- NvimTree mappings
+    vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = "Toggle NvimTree" })
+    vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<CR>', { noremap = true, silent = true, desc = "Find file in NvimTree" })
+
     -- Code actions
     vim.keymap.set('n', '<leader>ca', function()
         vim.lsp.buf.code_action()
