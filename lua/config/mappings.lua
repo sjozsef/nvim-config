@@ -53,7 +53,14 @@ M.setup = function()
             no_ignore_parent = true,
         })
     end, { desc = "Find all files (including hidden and ignored)" })
-    vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = "Live grep" })
+    vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = "Live grep (project only)" })
+    vim.keymap.set('n', '<leader>fW', function()
+        builtin.live_grep({
+            additional_args = function(args)
+                return vim.list_extend(args, { "--hidden", "--no-ignore" })
+            end,
+        })
+    end, { desc = "Live grep (including hidden and ignored)" })
     vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Buffers" })
     vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = "Help tags" })
 
