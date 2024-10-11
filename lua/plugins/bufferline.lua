@@ -8,11 +8,6 @@ return {
     options = {
             separator_style = "slant",
         },
-        highlights = require("nord").bufferline.highlights({
-            italic = true,
-            bold = true,
-            fill = "#181c24"
-        })
     }
   end
 }
