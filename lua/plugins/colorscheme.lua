@@ -1,104 +1,32 @@
--- return {
---   "folke/tokyonight.nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd([[colorscheme tokyonight-night]])
---   end,
--- }
-
--- return {
---   "lewis6991/github_dark.nvim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd([[colorscheme github_dark]])
---   end,
--- }
-
--- return {
---   "rose-pine/neovim",
---   lazy = false,
---   priority = 1000,
---   config = function()
---     vim.cmd([[colorscheme rose-pine-moon]])
---
---     -- Define custom highlight groups
---     vim.api.nvim_set_hl(0, "RosePineNormal", { bg = "#1f1d2e" })
---     vim.api.nvim_set_hl(0, "RosePineNormalNC", { bg = "#2a273f" })
---
---     -- Function to set the correct highlight for all windows
---     local function set_rosepine_highlight()
---       local current_win = vim.api.nvim_get_current_win()
---       for _, win in ipairs(vim.api.nvim_list_wins()) do
---         if win == current_win then
---           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormal")
---         else
---           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormalNC")
---         end
---       end
---     end
---
---     -- Set up autocommands to adjust window brightness
---     local rosepine_group = vim.api.nvim_create_augroup("RosePineActiveWindow", { clear = true })
---     vim.api.nvim_create_autocmd({"VimEnter", "WinEnter", "BufWinEnter", "WinNew"}, {
---       group = rosepine_group,
---       callback = set_rosepine_highlight,
---     })
---
---     -- Ensure correct highlighting after plugin operations
---     vim.api.nvim_create_autocmd("CmdlineLeave", {
---       group = rosepine_group,
---       callback = function()
---         vim.defer_fn(set_rosepine_highlight, 0)
---       end,
---     })
---   end,
--- }
-
--- return {
---   "shaunsingh/nord.nvim",
---   config = function()
---     vim.g.nord_contrast = false
---     vim.g.nord_borders = false
---     vim.g.nord_disable_background = false
---     vim.g.nord_cursorline_transparent = false
---     vim.g.nord_enable_sidebar_background = false
---     vim.g.nord_italic = false
---     vim.g.nord_uniform_diff_background = false
---     vim.g.nord_bold = false
---
---     vim.cmd([[colorscheme nord]])
---
---     -- Define custom highlight groups
---     vim.api.nvim_set_hl(0, "NordNormal", { bg = "#252A34" })
---     vim.api.nvim_set_hl(0, "NordNormalNC", { bg = "#2E3440" })
---
---     -- Function to set the correct highlight for all windows
---     local function set_nord_highlight()
---       local current_win = vim.api.nvim_get_current_win()
---       for _, win in ipairs(vim.api.nvim_list_wins()) do
---         if win == current_win then
---           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:NordNormal")
---         else
---           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:NordNormalNC")
---         end
---       end
---     end
---
---     -- Set up autocommands to adjust window brightness
---     local nord_group = vim.api.nvim_create_augroup("NordActiveWindow", { clear = true })
---     vim.api.nvim_create_autocmd({"VimEnter", "WinEnter", "BufWinEnter", "WinNew"}, {
---       group = nord_group,
---       callback = set_nord_highlight,
---     })
---
---     -- Ensure correct highlighting after plugin operations
---     vim.api.nvim_create_autocmd("CmdlineLeave", {
---       group = nord_group,
---       callback = function()
---         vim.defer_fn(set_nord_highlight, 0)
---       end,
---     })
---   end,
--- }
+return {
+  "ellisonleao/gruvbox.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("gruvbox").setup({
+      terminal_colors = true,
+      undercurl = true,
+      underline = true,
+      bold = true,
+      italic = {
+        strings = true,
+        emphasis = true,
+        comments = true,
+        operators = false,
+        folds = true,
+      },
+      strikethrough = true,
+      invert_selection = false,
+      invert_signs = false,
+      invert_tabline = false,
+      invert_intend_guides = false,
+      inverse = true,
+      contrast = "hard", -- can be "hard", "soft" or empty string
+      palette_overrides = {},
+      overrides = {},
+      dim_inactive = false,
+      transparent_mode = false,
+    })
+    vim.cmd([[colorscheme gruvbox]])
+  end,
+}
