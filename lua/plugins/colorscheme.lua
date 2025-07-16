@@ -16,45 +16,45 @@
 --   end,
 -- }
 
-return {
-  "rose-pine/neovim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme rose-pine-moon]])
-
-    -- Define custom highlight groups
-    vim.api.nvim_set_hl(0, "RosePineNormal", { bg = "#1f1d2e" })
-    vim.api.nvim_set_hl(0, "RosePineNormalNC", { bg = "#2a273f" })
-
-    -- Function to set the correct highlight for all windows
-    local function set_rosepine_highlight()
-      local current_win = vim.api.nvim_get_current_win()
-      for _, win in ipairs(vim.api.nvim_list_wins()) do
-        if win == current_win then
-          vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormal")
-        else
-          vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormalNC")
-        end
-      end
-    end
-
-    -- Set up autocommands to adjust window brightness
-    local rosepine_group = vim.api.nvim_create_augroup("RosePineActiveWindow", { clear = true })
-    vim.api.nvim_create_autocmd({"VimEnter", "WinEnter", "BufWinEnter", "WinNew"}, {
-      group = rosepine_group,
-      callback = set_rosepine_highlight,
-    })
-
-    -- Ensure correct highlighting after plugin operations
-    vim.api.nvim_create_autocmd("CmdlineLeave", {
-      group = rosepine_group,
-      callback = function()
-        vim.defer_fn(set_rosepine_highlight, 0)
-      end,
-    })
-  end,
-}
+-- return {
+--   "rose-pine/neovim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     vim.cmd([[colorscheme rose-pine-moon]])
+--
+--     -- Define custom highlight groups
+--     vim.api.nvim_set_hl(0, "RosePineNormal", { bg = "#1f1d2e" })
+--     vim.api.nvim_set_hl(0, "RosePineNormalNC", { bg = "#2a273f" })
+--
+--     -- Function to set the correct highlight for all windows
+--     local function set_rosepine_highlight()
+--       local current_win = vim.api.nvim_get_current_win()
+--       for _, win in ipairs(vim.api.nvim_list_wins()) do
+--         if win == current_win then
+--           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormal")
+--         else
+--           vim.api.nvim_win_set_option(win, "winhighlight", "Normal:RosePineNormalNC")
+--         end
+--       end
+--     end
+--
+--     -- Set up autocommands to adjust window brightness
+--     local rosepine_group = vim.api.nvim_create_augroup("RosePineActiveWindow", { clear = true })
+--     vim.api.nvim_create_autocmd({"VimEnter", "WinEnter", "BufWinEnter", "WinNew"}, {
+--       group = rosepine_group,
+--       callback = set_rosepine_highlight,
+--     })
+--
+--     -- Ensure correct highlighting after plugin operations
+--     vim.api.nvim_create_autocmd("CmdlineLeave", {
+--       group = rosepine_group,
+--       callback = function()
+--         vim.defer_fn(set_rosepine_highlight, 0)
+--       end,
+--     })
+--   end,
+-- }
 
 -- return {
 --   "shaunsingh/nord.nvim",
