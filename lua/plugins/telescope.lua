@@ -11,6 +11,7 @@ return {
     telescope.setup{
       defaults = {
         file_ignore_patterns = {},
+        path_display = { "truncate" },
       },
       pickers = {
         find_files = {
