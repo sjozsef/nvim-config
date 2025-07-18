@@ -12,6 +12,12 @@ return {
       defaults = {
         file_ignore_patterns = {},
         path_display = { "truncate" },
+        layout_strategy = 'vertical',
+        layout_config = {
+          vertical = {
+            prompt_position = "top",
+          },
+        },
       },
       pickers = {
         find_files = {
