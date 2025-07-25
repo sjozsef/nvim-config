@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense" }
+        ensure_installed = { "intelephense", "ts_ls", "lua_ls" }
       })
     end
   },
@@ -41,22 +41,7 @@ return {
         };
       }
 
-      lspconfig.ts_ls.setup{
-        init_options = {
-          plugins = {
-            {
-              name = "@vue/typescript-plugin",
-              location = "/Users/sjozsef/.nvm/versions/node/v22.3.0/lib/node_modules/@vue/typescript-plugin",
-              languages = {"javascript", "typescript", "vue"},
-            },
-          },
-        },
-        filetypes = {
-          "javascript",
-          "typescript",
-          "vue",
-        },
-      }
+      lspconfig.ts_ls.setup{}
 
       lspconfig.lua_ls.setup{
         init_options = {
