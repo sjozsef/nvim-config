@@ -91,7 +91,8 @@ M.setup = function()
     vim.keymap.set('n', 'gi', builtin.lsp_implementations, { desc = "Show implementations" })
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = "Keymaps" })
     vim.keymap.set('n', 'gf', builtin.grep_string, { desc = "Search current word" })
-    vim.keymap.set('n', '<leader>fS', builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
+    vim.keymap.set('n', '<leader>fS', builtin.lsp_dynamic_workspace_symbols, { desc = "Workspace symbols" })
+    vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = "Show document symbols" })
     vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "Commands" })
 
     -- NvimTree mappings
