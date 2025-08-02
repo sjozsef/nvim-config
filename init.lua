@@ -27,24 +27,9 @@ require('config.mappings').setup()
 
 vim.o.guifont = "FiraCode Nerd Font Mono:h19"
 
--- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_config.blade = {
---     install_info = {
---         url = "https://github.com/EmranMR/tree-sitter-blade", -- Repository URL
---         files = { "src/parser.c" }, -- Source file for the parser
---         branch = "main", -- Branch to use
---     },
---     filetype = "blade", -- Filetype for Blade files
--- }
-
-vim.filetype.add({
-    pattern = {
-        [".*%.blade%.php"] = "blade", -- Recognize .blade.php files as Blade
-    }
-})
-
 vim.filetype.add({
    pattern = {
+     [".*%.blade%.php"] = "blade",
      ['.env'] = 'sh',
      ['.env%..*'] = 'sh',
    }
