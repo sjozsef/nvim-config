@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense", "ts_ls", "lua_ls" }
+        ensure_installed = { "intelephense", "vtsls", "vuels", "lua_ls" }
       })
     end
   },
@@ -41,7 +41,11 @@ return {
         };
       }
 
-      lspconfig.ts_ls.setup{}
+      -- Vue and TypeScript setup with vtsls
+      lspconfig.vtsls.setup{}
+      
+      -- Vue language server setup
+      lspconfig.vuels.setup{}
 
       lspconfig.lua_ls.setup{
         init_options = {
