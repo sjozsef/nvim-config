@@ -66,6 +66,19 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
+-- Filter out position encoding warnings
+vim.notify = (function(original_notify)
+  return function(msg, level, opts)
+    if type(msg) == "string" and (
+      msg:match("position_encoding param is required") or
+      msg:match("vim%.tbl_islist is deprecated")
+    ) then
+      return
+    end
+    return original_notify(msg, level, opts)
+  end
+end)(vim.notify)
+
 -- Function to show diagnostics in a floating window
 local function show_line_diagnostics()
   vim.diagnostic.open_float(nil, {
