@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense", "lua_ls", "vtsls", "vue_ls" },
+        ensure_installed = { "intelephense", "lua_ls", "vtsls" },
       })
     end
   },
@@ -22,30 +22,10 @@ return {
       -- Lua LSP setup
       lspconfig.lua_ls.setup {}
 
-      -- Vue Language Tools configuration
-      local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
-
-      local vue_plugin = {
-        name = '@vue/typescript-plugin',
-        location = vue_language_server_path,
-        languages = { 'vue' },
-        configNamespace = 'typescript',
-      }
-
-      -- TypeScript/JavaScript LSP setup with Vue plugin
+      -- TypeScript/JavaScript LSP setup
       lspconfig.vtsls.setup {
-        settings = {
-          vtsls = {
-            tsserver = {
-              globalPlugins = { vue_plugin },
-            },
-          },
-        },
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact' }
       }
-
-      -- Vue LSP setup
-      lspconfig.vue_ls.setup {}
 
       -- PHP (Intelephense) setup
       lspconfig.intelephense.setup {
