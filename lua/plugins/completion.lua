@@ -21,7 +21,6 @@ return {
         mapping = cmp.mapping.preset.insert({}),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          -- { name = 'supermaven' },
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
