@@ -1,12 +1,9 @@
--- Language Server Configuration
+-- Language Server Configuration (nvim 0.11+ API)
 --
 -- Install required language servers manually:
 --   npm install -g @vtsls/language-server @vue/language-server intelephense
---   macOS:  brew install lua-language-server
---   Linux:  sudo apt install lua-language-server (or download release)
 --
 -- Configured servers:
--- - lua_ls: Lua language server
 -- - vtsls: TypeScript/JavaScript/Vue language server
 -- - intelephense: PHP language server
 
@@ -14,10 +11,6 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
-
-      lspconfig.lua_ls.setup {}
-
       -- Resolve @vue/language-server via the active npm global root so the
       -- config works on macOS (nvm), Linux, and any other npm install layout.
       local function vue_ts_plugin_path()
@@ -38,16 +31,16 @@ return {
         })
       end
 
-      lspconfig.vtsls.setup {
+      vim.lsp.config("vtsls", {
         filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         settings = {
           vtsls = {
             tsserver = { globalPlugins = global_plugins },
           },
         },
-      }
+      })
 
-      lspconfig.intelephense.setup {
+      vim.lsp.config("intelephense", {
         settings = {
           intelephense = {
             stubs = {
@@ -64,7 +57,9 @@ return {
             files = { maxSize = 5000000 },
           },
         },
-      }
+      })
+
+      vim.lsp.enable({ "vtsls", "intelephense" })
     end,
   },
 }
