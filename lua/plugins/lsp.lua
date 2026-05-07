@@ -1,14 +1,14 @@
 -- Language Server Configuration
--- 
+--
 -- Install required language servers manually:
--- npm install -g @vtsls/language-server @vue/language-server intelephense
--- brew install lua-language-server (or download from GitHub)
+--   npm install -g @vtsls/language-server @vue/language-server intelephense
+--   macOS:  brew install lua-language-server
+--   Linux:  sudo apt install lua-language-server (or download release)
 --
 -- Configured servers:
 -- - lua_ls: Lua language server
--- - vtsls: TypeScript/JavaScript/Vue language server 
+-- - vtsls: TypeScript/JavaScript/Vue language server
 -- - intelephense: PHP language server
--- - vue_ls: Vue language server (commented out, using vtsls for Vue support)
 
 return {
   {
@@ -16,34 +16,37 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      -- Lua LSP setup
       lspconfig.lua_ls.setup {}
 
-      -- TypeScript/JavaScript LSP setup with Vue support
+      -- Resolve @vue/language-server via the active npm global root so the
+      -- config works on macOS (nvm), Linux, and any other npm install layout.
+      local function vue_ts_plugin_path()
+        if vim.fn.executable("npm") ~= 1 then return nil end
+        local root = vim.trim(vim.fn.system("npm root -g"))
+        if vim.v.shell_error ~= 0 then return nil end
+        local path = root .. "/@vue/language-server"
+        return vim.fn.isdirectory(path) == 1 and path or nil
+      end
+
+      local global_plugins = {}
+      local vue_path = vue_ts_plugin_path()
+      if vue_path then
+        table.insert(global_plugins, {
+          name = "@vue/typescript-plugin",
+          location = vue_path,
+          languages = { "vue" },
+        })
+      end
+
       lspconfig.vtsls.setup {
-        cmd = { '/Users/sjozsef/.nvm/versions/node/v22.3.0/bin/vtsls', '--stdio' },
-        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
         settings = {
           vtsls = {
-            tsserver = {
-              globalPlugins = {
-                {
-                  name = '@vue/typescript-plugin',
-                  location = '/Users/sjozsef/.nvm/versions/node/v22.3.0/lib/node_modules/@vue/language-server',
-                  languages = { 'vue' },
-                }
-              }
-            }
-          }
-        }
+            tsserver = { globalPlugins = global_plugins },
+          },
+        },
       }
 
-      -- Vue Language Server setup
-      -- lspconfig.vue_ls.setup {
-      --   filetypes = { 'vue' }
-      -- }
-
-      -- PHP (Intelephense) setup
       lspconfig.intelephense.setup {
         settings = {
           intelephense = {
@@ -56,14 +59,12 @@ return {
               "Phar", "readline", "recode", "Reflection", "regex",
               "session", "SimpleXML", "soap", "sockets", "sodium",
               "SPL", "standard", "superglobals", "tokenizer", "xml",
-              "xdebug", "xmlreader", "xmlwriter", "yaml", "zip", "zlib"
+              "xdebug", "xmlreader", "xmlwriter", "yaml", "zip", "zlib",
             },
-            files = {
-              maxSize = 5000000;
-            };
-          };
-        };
+            files = { maxSize = 5000000 },
+          },
+        },
       }
-    end
-  }
+    end,
+  },
 }
