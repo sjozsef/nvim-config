@@ -19,7 +19,22 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
--- Set clipboard to use system clipboard
+-- Set clipboard to use system clipboard. When running inside an SSH session,
+-- route copies through OSC 52 so yanks land on the *originating* machine's
+-- clipboard (e.g. nvim on Linux over SSH from a Mac → Mac clipboard).
+if vim.env.SSH_TTY ~= nil then
+  vim.g.clipboard = {
+    name = "osc52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
+end
 vim.opt.clipboard = "unnamedplus"
 
 require('config.lazy')
